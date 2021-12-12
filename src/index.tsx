@@ -5,11 +5,22 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import styled from 'styled-components'
+import tw from 'twin.macro'
+
+const LayoutWrapper=styled.div`
+  ${tw`
+    flex
+    justify-center
+  `}
+`
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <LayoutWrapper>
+        <App />
+      </LayoutWrapper>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
